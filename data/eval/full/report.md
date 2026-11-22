@@ -32,3 +32,18 @@ Confusion matrix (rows = true, columns = predicted: SUPPORTED, REFUTED, NOT_ENOU
 |---|---|---|---|
 | scifact | 172 | 42.4% | 44.7% |
 | vitaminc | 41425 | 67.6% | 65.4% |
+## SciFact validation: evidence selection experiment
+
+Evaluated 141 SciFact validation records with provided rationale evidence using the same NLI model (`MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli`).
+
+| Evidence strategy | Accuracy | Macro-F1 |
+|---|---:|---:|
+| Annotated rationale sentences | 35.46% | 33.29% |
+| Full abstract | 56.03% | 40.49% |
+| TF-IDF selected abstract sentences | **58.16%** | **41.07%** |
+
+TF-IDF ranked abstract sentences by relevance to each claim and selected sentences within the model's 512-token input limit. It selected an average of 9.81 sentences per record.
+
+**Finding:** TF-IDF selection achieved the best validation result, improving accuracy by 2.13 percentage points over full abstracts and macro-F1 by 0.58 percentage points.
+
+**Limitations:** This is a validation experiment, not an independent test result. The subset contains only 141 records with provided rationale evidence and has no NEI examples. The method has not yet been integrated into the production verifier.
