@@ -1,0 +1,10 @@
+numpy>=1.26
+# download step only:
+datasets>=2.19
+# next stages (not yet implemented): sentence-transformers, faiss-cpu or chromadb, rank-bm25, transformers, torch, fastapi
+
+# Tavily web evidence search
+tavily-python
+fastapi
+uvicorn[standard]
+python-dotenv

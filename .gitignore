@@ -1,0 +1,30 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+.venv/
+.venv-ml/
+.venv312/
+
+# Node dependencies
+node_modules/
+
+# Python cache and test files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# macOS files
+.DS_Store
+
+# Large datasets and generated model artifacts
+data/kb/
+data/processed/
+data/raw/
+
+# Temporary backup files
+*.backup
+*.bak
+*backup*
